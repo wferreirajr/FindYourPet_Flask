@@ -1,0 +1,84 @@
+{% extends 'base_admin.html' %}
+
+{% block title %} Admin {% endblock %}
+
+{% block titulo %} Novo Usuário {% endblock %}
+
+{% block content %}
+<form class="row g-3">
+    <div class="col-md-12 text-center">
+        <h4>Dados Pessoais</h4>
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Primeiro Nome</label>
+      <input type="text" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Ultimo Nome</label>
+      <input type="text" class="form-control" id="inputPassword4">
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Tipo</label>
+      <input type="text" class="form-control" id="inputPassword4">
+    </div>
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Telefone Celular</label>
+        <input type="tel" class="form-control" id="inputEmail4">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Telefone Fixo</label>
+        <input type="tel" class="form-control" id="inputPassword4">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="inputEmail4">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Repita Senha</label>
+        <input type="password" class="form-control" id="inputPassword4">
+      </div>
+    <div class="col-md-12 text-center">
+        <h4>Endereço</h4>
+    </div>
+    <div class="col-md-2">
+        <label for="inputEmail4" class="form-label">CEP</label>
+        <input type="number" class="form-control" id="inputEmail4">
+      </div>
+      <div class="col-md-10">
+        <label for="inputPassword4" class="form-label">Rua</label>
+        <input type="text" class="form-control" id="inputPassword4" disabled readonly>
+      </div>
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Numero</label>
+        <input type="number" class="form-control" id="inputEmail4">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Complemento</label>
+        <input type="text" class="form-control" id="inputPassword4">
+      </div>
+      <div class="col-md-5">
+        <label for="inputPassword4" class="form-label">Bairro</label>
+        <input type="text" class="form-control" id="inputPassword4" disabled readonly>
+      </div>
+    <div class="col-md-5">
+        <label for="inputEmail4" class="form-label">Cidade</label>
+        <input type="text" class="form-control" id="inputEmail4" disabled readonly>
+      </div>
+      <div class="col-md-2">
+        <label for="inputPassword4" class="form-label">Estado/UF</label>
+        <input type="text" class="form-control" id="inputPassword4" disabled readonly>
+      </div>
+      <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top">
+      <div class="col-6 text-center">
+        <button type="submit" class="btn btn-secondary">Cancelar</button>
+      </div>
+      <div class="col-6 text-center">
+      <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+    </div>
+  </form>
+{% endblock %}
