@@ -22,4 +22,6 @@ def dashboard():
 def adduser():
     return render_template('adduser.html', mactive_admin='active', mexpand='true')
 
-app.run(host='0.0.0.0', port='8081', debug=True)
+# app.run(host='0.0.0.0', port='8081', debug=True)
+if __name__ == '__main__':
+   app.run()
