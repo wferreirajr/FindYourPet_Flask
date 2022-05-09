@@ -19,6 +19,7 @@ lib64/
 parts/
 sdist/
 var/
+site-packages/
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
@@ -132,3 +133,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Custom Wilson
+*.txt

@@ -5,76 +5,81 @@
 {% block titulo %} Novo Usuário {% endblock %}
 
 {% block content %}
-<form class="row g-3">
+<form class="row g-3" method="POST" action="">
     <div class="col-md-12 text-center">
         <h4>Dados Pessoais</h4>
     </div>
     <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Primeiro Nome</label>
-      <input type="text" class="form-control" id="inputEmail4">
+      <label for="psaNome" class="form-label">Primeiro Nome</label>
+      <input type="text" class="form-control" id="psaNome" name="psaNome" value="{{ request.form['psaNome'] }}">
     </div>
     <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Ultimo Nome</label>
-      <input type="text" class="form-control" id="inputPassword4">
+      <label for="psaSobreNome" class="form-label">Ultimo Nome</label>
+      <input type="text" class="form-control" id="psaSobreNome" name="psaSobreNome" value="{{ request.form['psaSobreNome'] }}">
     </div>
     <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" class="form-control" id="inputEmail4">
+      <label for="psaEmail" class="form-label">Email</label>
+      <input type="email" class="form-control" id="psaEmail" name="psaEmail" value="{{ request.form['psaEmail'] }}">
     </div>
     <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Tipo</label>
-      <input type="text" class="form-control" id="inputPassword4">
+      <div class="mb-3">
+        <label for="psaTipo" class="form-label">Tipo</label>
+        <select class="form-control" name="psaTipo" id="psaTipo" aria-label="Default select example">
+          <option value="{{ request.form['psaTipo'] }}" selected>Usuário</option>
+          <option value="{{ request.form['psaTipo'] }}">Administrador</option>
+        </select>
+      </div>
     </div>
     <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Telefone Celular</label>
-        <input type="tel" class="form-control" id="inputEmail4">
+        <label for="psaTelCelular" class="form-label">Telefone Celular</label>
+        <input type="tel" class="form-control" id="psaTelCelular" name="psaTelCelular" value="{{ request.form['psaTelCelular'] }}">
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Telefone Fixo</label>
-        <input type="tel" class="form-control" id="inputPassword4">
+        <label for="psaTelFixo" class="form-label">Telefone Fixo</label>
+        <input type="tel" class="form-control" id="psaTelFixo" name="psaTelFixo" value="{{ request.form['psaTelFixo'] }}">
       </div>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Senha</label>
-        <input type="password" class="form-control" id="inputEmail4">
+        <label for="psasenha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="psasenha" name="psasenha" value="{{ request.form['psasenha'] }}">
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Repita Senha</label>
-        <input type="password" class="form-control" id="inputPassword4">
+        <label for="psaRepSenha" class="form-label">Repita Senha</label>
+        <input type="password" class="form-control" id="psaRepSenha" name="psaRepSenha" value="{{ request.form['psaRepSenha'] }}">
       </div>
     <div class="col-md-12 text-center">
         <h4>Endereço</h4>
     </div>
     <div class="col-md-2">
-        <label for="inputEmail4" class="form-label">CEP</label>
-        <input type="number" class="form-control" id="inputEmail4">
+        <label for="edrCep" class="form-label">CEP</label>
+        <input type="number" class="form-control" id="edrCep" name="edrCep" value="{{ request.form['edrCep'] }}">
       </div>
       <div class="col-md-10">
-        <label for="inputPassword4" class="form-label">Rua</label>
-        <input type="text" class="form-control" id="inputPassword4" disabled readonly>
+        <label for="edrRua" class="form-label">Rua</label>
+        <input type="text" class="form-control" id="edrRua" name="edrRua" value="{{ request.form['edrRua'] }}">
       </div>
     <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Numero</label>
-        <input type="number" class="form-control" id="inputEmail4">
+        <label for="edrNumero" class="form-label">Numero</label>
+        <input type="number" class="form-control" id="edrNumero" name="edrNumero" value="{{ request.form['edrNumero'] }}">
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Complemento</label>
-        <input type="text" class="form-control" id="inputPassword4">
+        <label for="edrComplemento" class="form-label">Complemento</label>
+        <input type="text" class="form-control" id="edrComplemento" name="edrComplemento" value="{{ request.form['edrComplemento'] }}">
       </div>
       <div class="col-md-5">
-        <label for="inputPassword4" class="form-label">Bairro</label>
-        <input type="text" class="form-control" id="inputPassword4" disabled readonly>
+        <label for="edrBairro" class="form-label">Bairro</label>
+        <input type="text" class="form-control" id="edrBairro" name="edrBairro" value="{{ request.form['edrBairro'] }}">
       </div>
     <div class="col-md-5">
-        <label for="inputEmail4" class="form-label">Cidade</label>
-        <input type="text" class="form-control" id="inputEmail4" disabled readonly>
+        <label for="edrCidade" class="form-label">Cidade</label>
+        <input type="text" class="form-control" id="edrCidade" name="edrCidade" value="{{ request.form['edrCidade'] }}">
       </div>
       <div class="col-md-2">
-        <label for="inputPassword4" class="form-label">Estado/UF</label>
-        <input type="text" class="form-control" id="inputPassword4" disabled readonly>
+        <label for="edrEstado" class="form-label">Estado/UF</label>
+        <input type="text" class="form-control" id="edrEstado" name="edrEstado" value="{{ request.form['edrEstado'] }}">
       </div>
       <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top">
       <div class="col-6 text-center">
-        <button type="submit" class="btn btn-secondary">Cancelar</button>
+        <a href="/admin" class="btn btn-secondary" role="button">Cancelar</a>
       </div>
       <div class="col-6 text-center">
       <button type="submit" class="btn btn-success">Salvar</button>
