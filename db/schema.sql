@@ -1,10 +1,19 @@
-DROP TABLE IF EXISTS account;
+DROP TABLE IF EXISTS accounts;
 
-CREATE TABLE "account" (
+CREATE TABLE "accounts" (
         "id" INTEGER PRIMARY KEY AUTOINCREMENT,
         "created" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        "fullname" TEXT NOT NULL,
-        "user" TEXT NOT NULL,
-        "passwd" TEXT NOT NULL,
-        "type" TEXT NOT NULL
+        "NomeCompleto" TEXT NOT NULL,
+        "Email" TEXT NOT NULL,
+        "Tipo" TEXT NOT NULL,
+        "Senha" TEXT NOT NULL,
+        "TelCelular" TEXT,
+        "TelFixo" TEXT,
+        "Cep" TEXT,
+        "Rua" TEXT,
+        "Numero" TEXT,
+        "Complemento" TEXT,
+        "Bairro" TEXT,
+        "Cidade" TEXT,
+        "Estado" TEXT
 );

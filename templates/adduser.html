@@ -5,17 +5,13 @@
 {% block titulo %} Novo Usuário {% endblock %}
 
 {% block content %}
-<form class="row g-3" method="POST" action="">
+<form class="row g-3" method="POST" action="/createusradmin/">
     <div class="col-md-12 text-center">
         <h4>Dados Pessoais</h4>
     </div>
-    <div class="col-md-6">
-      <label for="psaNome" class="form-label">Primeiro Nome</label>
-      <input type="text" class="form-control" id="psaNome" name="psaNome" value="{{ request.form['psaNome'] }}">
-    </div>
-    <div class="col-md-6">
-      <label for="psaSobreNome" class="form-label">Ultimo Nome</label>
-      <input type="text" class="form-control" id="psaSobreNome" name="psaSobreNome" value="{{ request.form['psaSobreNome'] }}">
+    <div class="col-md-612>
+      <label for="psaNomeCompleto" class="form-label">Nome Completo</label>
+      <input type="text" class="form-control" id="psaNomeCompleto" name="psaNomeCompleto" value="{{ request.form['psaNomeCompleto'] }}">
     </div>
     <div class="col-md-6">
       <label for="psaEmail" class="form-label">Email</label>
@@ -25,8 +21,8 @@
       <div class="mb-3">
         <label for="psaTipo" class="form-label">Tipo</label>
         <select class="form-control" name="psaTipo" id="psaTipo" aria-label="Default select example">
-          <option value="{{ request.form['psaTipo'] }}" selected>Usuário</option>
-          <option value="{{ request.form['psaTipo'] }}">Administrador</option>
+          <option value="user" selected>Usuário</option>
+          <option value="admin">Administrador</option>
         </select>
       </div>
     </div>
