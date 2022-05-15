@@ -5,11 +5,12 @@
 {% block titulo %} Novo Usuário {% endblock %}
 
 {% block content %}
+<div id="liveAlertPlaceholder"></div>
 <form class="row g-3" method="POST" action="/createusradmin/">
     <div class="col-md-12 text-center">
         <h4>Dados Pessoais</h4>
     </div>
-    <div class="col-md-612>
+    <div class="col-md-12">
       <label for="psaNomeCompleto" class="form-label">Nome Completo</label>
       <input type="text" class="form-control" id="psaNomeCompleto" name="psaNomeCompleto" value="{{ request.form['psaNomeCompleto'] }}">
     </div>
@@ -78,8 +79,51 @@
         <a href="/admin" class="btn btn-secondary" role="button">Cancelar</a>
       </div>
       <div class="col-6 text-center">
-      <button type="submit" class="btn btn-success">Salvar</button>
+      <button type="submit" class="btn btn-success" id="liveAlertBtn">Salvar</button>
     </div>
     </div>
   </form>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+      const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+      const alert = (message, type) => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+          `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+          `   <div>${message}</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          '</div>'
+        ].join('')
+
+        alertPlaceholder.append(wrapper)
+      }
+
+      const alertTrigger = document.getElementById('liveAlertBtn')
+      if (alertTrigger) {
+        alertTrigger.addEventListener('click', () => {
+          alert('Nice, you triggered this alert message!', 'success')
+        })
+      }
+
+    </script>
 {% endblock %}

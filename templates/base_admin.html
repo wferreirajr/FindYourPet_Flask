@@ -17,7 +17,7 @@
 
   </head>
   <body class="overflow-auto">
-    
+
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 text-center" href="/admin">FindYourPet</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,10 +25,29 @@
   </button>
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="#">Sair</a>
+      <a class="nav-link px-3" href="#" data-bs-toggle="modal" data-bs-target="#sairModal">Sair</a>
     </div>
   </div>
 </header>
+
+<!-- Modal SAIR-->
+<div class="modal fade" id="sairModal" tabindex="-1" aria-labelledby="sairModal" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+      <h5 class="modal-title" id="sairModal">Sair do Sistema</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza que deseja sair do sistema?</p>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+      <a type="button" class="btn btn-primary" href="/sair">Sim</a>
+      </div>
+  </div>
+  </div>
+</div>
 
 <div class="container-fluid">
   <div class="row">
@@ -54,19 +73,19 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#registro-collapse" aria-expanded="false">
+            <a class="nav-link btn btn-toggle align-items-center rounded collapsed {{ mactive_animal }}" data-bs-toggle="collapse" data-bs-target="#registro-collapse" aria-expanded="false">
               <span data-feather="layers"></span>
               Registro
             </a>
             <div class="collapse" id="registro-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-dark rounded">Cadastrar</a></li>
+                <li><a href="addanimal" class="link-dark rounded">Cadastrar</a></li>
                 <li><a href="#" class="link-dark rounded">Listar</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#avisoRelatorio">
               <span data-feather="bar-chart-2"></span>
               Relatório
             </a>
@@ -84,6 +103,21 @@
 
     </main>
 
+  </div>
+</div>
+
+<!-- Modal Costrucao-->
+<div class="modal fade" id="avisoRelatorio" tabindex="-1" aria-labelledby="avisoRelatorio" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+      <div class="modal-header">
+      <h5 class="modal-title" id="avisoRelatorio">Aviso</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Esta parte ainda não esta pronto.</p>
+      </div>
+  </div>
   </div>
 </div>
 

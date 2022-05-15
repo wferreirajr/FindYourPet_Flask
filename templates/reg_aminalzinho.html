@@ -1,0 +1,86 @@
+{% extends 'base_admin.html' %}
+
+{% block title %} Admin {% endblock %}
+
+{% block titulo %} Novo Aminalzinho {% endblock %}
+
+{% block content %}
+<form class="row g-3" method="POST" action="/registeranimal/">
+    <div class="col-md-6">
+      <label for="amnNomeCompleto" class="form-label">Nome do Aminalzinho</label>
+      <input type="text" class="form-control" id="amnNomeCompleto" name="amnNomeCompleto" value="{{ request.form['amnNomeCompleto'] }}">
+    </div>
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="amnFoto" class="form-label">Foto</label>
+        <input class="form-control" type="file" id="amnFoto" name="amnFoto" value="{{ request.form['amnFoto'] }}">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="amnEspecie" class="form-label">Especie</label>
+      <input type="text" class="form-control" id="amnEspecie" name="amnEspecie" value="{{ request.form['amnEspecie'] }}">
+    </div>
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="amnSexo" class="form-label">Sexo</label>
+        <select class="form-control" name="amnSexo" id="amnSexo" aria-label="Default select example">
+          <option value="macho" selected>Macho</option>
+          <option value="femea">Femea</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+        <label for="amnIdade" class="form-label">Idade</label>
+        <input type="number" class="form-control" id="amnIdade" name="amnIdade" value="{{ request.form['amnIdade'] }}">
+      </div>
+      <div class="col-md-6">
+        <label for="amnPorte" class="form-label">Porte</label>
+        <input type="text" class="form-control" id="amnPorte" name="amnPorte" value="{{ request.form['amnPorte'] }}">
+      </div>
+      <div class="col-md-12">
+        <label for="amnSobre" class="form-label">Sobre o Aminalzinho</label>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Descreva um pouco mais sobre." id="amnSobre" style="height: 100px" name="amnSobre" value="{{ request.form['amnSobre'] }}"></textarea>
+        </div>
+      </div>
+    <div class="col-md-12 text-center">
+        <h4>Onde Mora</h4>
+    </div>
+    <div class="col-md-2">
+        <label for="edrCep" class="form-label">CEP</label>
+        <input type="number" class="form-control" id="edrCep" name="edrCep" value="{{ request.form['edrCep'] }}">
+      </div>
+      <div class="col-md-10">
+        <label for="edrRua" class="form-label">Rua</label>
+        <input type="text" class="form-control" id="edrRua" name="edrRua" value="{{ request.form['edrRua'] }}">
+      </div>
+    <div class="col-md-6">
+        <label for="edrNumero" class="form-label">Numero</label>
+        <input type="number" class="form-control" id="edrNumero" name="edrNumero" value="{{ request.form['edrNumero'] }}">
+      </div>
+      <div class="col-md-6">
+        <label for="edrComplemento" class="form-label">Complemento</label>
+        <input type="text" class="form-control" id="edrComplemento" name="edrComplemento" value="{{ request.form['edrComplemento'] }}">
+      </div>
+      <div class="col-md-5">
+        <label for="edrBairro" class="form-label">Bairro</label>
+        <input type="text" class="form-control" id="edrBairro" name="edrBairro" value="{{ request.form['edrBairro'] }}">
+      </div>
+      <div class="col-md-5">
+        <label for="edrCidade" class="form-label">Cidade</label>
+        <input type="text" class="form-control" id="edrCidade" name="edrCidade" value="{{ request.form['edrCidade'] }}">
+      </div>
+      <div class="col-md-2">
+        <label for="edrEstado" class="form-label">Estado/UF</label>
+        <input type="text" class="form-control" id="edrEstado" name="edrEstado" value="{{ request.form['edrEstado'] }}">
+      </div>
+      <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top">
+        <div class="col-6 text-center">
+          <a href="/admin" class="btn btn-secondary" role="button">Cancelar</a>
+        </div>
+        <div class="col-6 text-center">
+          <button type="submit" class="btn btn-success">Salvar</button>
+        </div>
+      </div>
+  </form>
+{% endblock %}
