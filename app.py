@@ -1,5 +1,6 @@
 import sqlite3
 import os
+
 from crypt import methods
 from flask import Flask, render_template, request, url_for, flash, redirect
 from importlib_metadata import files
@@ -57,6 +58,13 @@ def list_cats():
     gatos = conn.execute('SELECT * FROM animals WHERE Especie IS "Gato"').fetchall()
     conn.close()
     return render_template('gatos.html', gatos=gatos)
+
+@app.route('/cachorros')
+def list_dogs():
+    conn = get_db_connection()
+    cachorros = conn.execute('SELECT * FROM animals WHERE Especie IS "Cachorro"').fetchall()
+    conn.close()
+    return render_template('cachorros.html', cachorros=cachorros)
 
 @app.route('/createusr/', methods=('GET', 'POST'))
 def create_user():
