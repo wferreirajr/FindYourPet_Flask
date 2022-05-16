@@ -143,7 +143,7 @@ def register_aminal():
 
         send_file = request.files['file']
         if send_file and allowed_file(send_file.filename):
-            filename = DATA_FORMAT.strftime('%d-%m-%Y_%H:%M:%S') + '_' + secure_filename(send_file.filename)
+            filename = DATA_FORMAT.strftime('%d-%m-%Y_%H_%M_%S') + '_' + secure_filename(send_file.filename)
             send_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         if not nome:
