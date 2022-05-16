@@ -158,7 +158,5 @@ def register_aminal():
 
     return render_template('registro.html')
 
-
-# app.run(host='0.0.0.0', port='8081', debug=True)
 if __name__ == '__main__':
-   app.run(host='0.0.0.0', debug=1)
+   app.run()
