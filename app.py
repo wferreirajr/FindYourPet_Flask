@@ -1,8 +1,22 @@
-from crypt import methods
 import sqlite3
+import os
+from crypt import methods
 from flask import Flask, render_template, request, url_for, flash, redirect
+from importlib_metadata import files
+from werkzeug.utils import secure_filename
+from datetime import datetime
+
+UPLOAD_FOLDER = './static'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+DATA_FORMAT = datetime.now()
 
 app = Flask(__name__)
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def get_db_connection():
     conn = sqlite3.connect('db/findyourpet.db')
@@ -36,6 +50,13 @@ def adduser():
 @app.route('/admin/addanimal')
 def addanimal():
     return render_template('reg_aminalzinho.html', mactive_animal='active')
+
+@app.route('/gatos')
+def list_cats():
+    conn = get_db_connection()
+    gatos = conn.execute('SELECT * FROM animals WHERE Especie IS "Gato"').fetchall()
+    conn.close()
+    return render_template('gatos.html', gatos=gatos)
 
 @app.route('/createusr/', methods=('GET', 'POST'))
 def create_user():
@@ -98,7 +119,6 @@ def create_user_admin():
 def register_aminal():
     if request.method == 'POST':
         nome = request.form['amnNomeCompleto']
-        foto = request.form['amnFoto']
         especie = request.form['amnEspecie']
         sexo = request.form['amnSexo']
         idade = request.form['amnIdade']
@@ -113,11 +133,17 @@ def register_aminal():
         cidade = request.form['edrCidade']
         estado = request.form['edrEstado']
 
+        send_file = request.files['file']
+        if send_file and allowed_file(send_file.filename):
+            filename = DATA_FORMAT.strftime('%d-%m-%Y_%H:%M:%S') + '_' + secure_filename(send_file.filename)
+            send_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
         if not nome:
             flash('O nome é requedido!')
         else:
+            foto = filename
             conn = get_db_connection()
-            conn.execute('INSERT INTO aminals (NomeCompleto, Foto, Especie, Sexo, Idade, Porte, Sobre, Cep, Rua, Numero, Complemento, Bairro, Cidade, Estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (nome, foto, especie, sexo, idade, porte, sobre, cep, endereco, numero, complemento, bairro, cidade, estado))
+            conn.execute('INSERT INTO animals (NomeCompleto, Foto, Especie, Sexo, Idade, Porte, Sobre, Cep, Rua, Numero, Complemento, Bairro, Cidade, Estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (nome, foto, especie, sexo, idade, porte, sobre, cep, endereco, numero, complemento, bairro, cidade, estado))
             conn.commit()
             conn.close()
             return redirect(url_for('addanimal'))

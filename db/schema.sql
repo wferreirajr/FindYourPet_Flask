@@ -18,7 +18,7 @@ CREATE TABLE "accounts" (
         "Estado" TEXT
 );
 
-CREATE TABLE "aminals" (
+CREATE TABLE "animals" (
         "id" INTEGER PRIMARY KEY AUTOINCREMENT,
         "created" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         "NomeCompleto" TEXT NOT NULL,

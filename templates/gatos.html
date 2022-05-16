@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for gato in gatos %}
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename=gato['Foto']) }}" alt="" class="bd-placeholder-img card-img-top" width="300" height="300">
+            <div class="card-body">
+              <h5 class="card-title text-uppercase">{{ gato['NomeCompleto'] }}</h5>
+              <p class="card-text">Meu nome é <span class="fw-bold">{{ gato['NomeCompleto'] }}</span> é tenho <span class="fw-bold">{{ gato['Idade'] }}</span> aminho(s).</p>
+              <p class="card-text">Sexo: {{ gato['Sexo'] }}</p>
+              <p class="card-text">Descrição: {{ gato['Sobre'] }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

@@ -5,29 +5,30 @@
 {% block titulo %} Novo Aminalzinho {% endblock %}
 
 {% block content %}
-<form class="row g-3" method="POST" action="/registeranimal/">
+<form class="row g-3" method="POST" action="{{ url_for('register_aminal') }}" enctype = "multipart/form-data">
     <div class="col-md-6">
       <label for="amnNomeCompleto" class="form-label">Nome do Aminalzinho</label>
       <input type="text" class="form-control" id="amnNomeCompleto" name="amnNomeCompleto" value="{{ request.form['amnNomeCompleto'] }}">
     </div>
     <div class="col-md-6">
-      <div class="mb-3">
         <label for="amnFoto" class="form-label">Foto</label>
-        <input class="form-control" type="file" id="amnFoto" name="amnFoto" value="{{ request.form['amnFoto'] }}">
-      </div>
+        <input class="form-control" type="file" id="amnFoto" name="file" value="{{ request.form['file'] }}">
     </div>
     <div class="col-md-6">
       <label for="amnEspecie" class="form-label">Especie</label>
-      <input type="text" class="form-control" id="amnEspecie" name="amnEspecie" value="{{ request.form['amnEspecie'] }}">
+      <select class="form-select" name="amnEspecie" id="amnEspecie" aria-label="Default select example">
+        <option selected>Selecione uma Opção</option>
+        <option value="Gato">Gato</option>
+        <option value="Cachorro">Cachorro</option>
+      </select>
     </div>
     <div class="col-md-6">
-      <div class="mb-3">
         <label for="amnSexo" class="form-label">Sexo</label>
-        <select class="form-control" name="amnSexo" id="amnSexo" aria-label="Default select example">
-          <option value="macho" selected>Macho</option>
-          <option value="femea">Femea</option>
+        <select class="form-select" name="amnSexo" id="amnSexo" aria-label="Default select example">
+          <option selected>Selecione uma Opção</option>
+          <option value="Macho">Macho</option>
+          <option value="Femea">Femea</option>
         </select>
-      </div>
     </div>
     <div class="col-md-6">
         <label for="amnIdade" class="form-label">Idade</label>
@@ -35,7 +36,12 @@
       </div>
       <div class="col-md-6">
         <label for="amnPorte" class="form-label">Porte</label>
-        <input type="text" class="form-control" id="amnPorte" name="amnPorte" value="{{ request.form['amnPorte'] }}">
+        <select class="form-select" name="amnPorte" id="amnPorte" aria-label="Default select example">
+          <option selected>Selecione uma Opção</option>
+          <option value="Pequeno">Pequeno</option>
+          <option value="Médio">Médio</option>
+          <option value="Grande">Grande</option>
+        </select>
       </div>
       <div class="col-md-12">
         <label for="amnSobre" class="form-label">Sobre o Aminalzinho</label>
