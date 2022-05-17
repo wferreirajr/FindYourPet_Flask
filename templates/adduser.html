@@ -18,13 +18,12 @@
       <input type="email" class="form-control" id="psaEmail" name="psaEmail" value="{{ request.form['psaEmail'] }}">
     </div>
     <div class="col-md-6">
-      <div class="mb-3">
         <label for="psaTipo" class="form-label">Tipo</label>
-        <select class="form-control" name="psaTipo" id="psaTipo" aria-label="Default select example">
-          <option value="user" selected>Usuário</option>
+        <select class="form-select" name="psaTipo" id="psaTipo" aria-label="Default select example">
+          <option selected>Selecione uma Opção</option>
+          <option value="user">Usuário</option>
           <option value="admin">Administrador</option>
         </select>
-      </div>
     </div>
     <div class="col-md-6">
         <label for="psaTelCelular" class="form-label">Telefone Celular</label>

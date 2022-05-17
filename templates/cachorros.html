@@ -12,17 +12,41 @@
             <img src="{{ url_for('static', filename=cachorro['Foto']) }}" alt="" class="bd-placeholder-img card-img-top" width="300" height="300">
             <div class="card-body">
               <h5 class="card-title text-uppercase">{{ cachorro['NomeCompleto'] }}</h5>
-              <p class="card-text">Meu nome é <span class="fw-bold">{{ cachorro['NomeCompleto'] }}</span> é tenho <span class="fw-bold">{{ cachorro['Idade'] }}</span> aminho(s).</p>
+              <p class="card-text">Meu nome é <span class="fw-bold">{{ cachorro['NomeCompleto'] }}</span>, tenho <span class="fw-bold">{{ cachorro['Idade'] }}</span> aninho(s) e moro na cidade de <span class="fw-bold">{{ cachorro['Cidade'] }}.</span></p>
               <p class="card-text">Sexo: {{ cachorro['Sexo'] }}</p>
-              <p class="card-text">Descrição: {{ cachorro['Sobre'] }}</p>
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button type="submit" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#detalhes">Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+          <!-- Modal Detalhes-->
+          <div class="modal fade" id="detalhes" tabindex="-1" aria-labelledby="detalhes" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title text-uppercase" id="detalhes">{{ cachorro['NomeCompleto'] }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <span class="fw-bold">Nome:</span> {{ cachorro['NomeCompleto'] }}<br>
+                    <span class="fw-bold">Idade:</span> {{ cachorro['Idade'] }}<br>
+                    <span class="fw-bold">Sexo:</span> {{ cachorro['Sexo'] }}<br>
+                    <span class="fw-bold">Porte:</span> {{ cachorro['Porte'] }}<br>
+                    <span class="fw-bold">Cidade:</span> {{ cachorro['Cidade'] }}<br>
+                    <span class="fw-bold">Estado:</span> {{ cachorro['Estado'] }}<br>
+                    <span class="fw-bold">Destalhes:</span> {{ cachorro['Sobre'] }}
+                  </p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+                </div>
+            </div>
+            </div>
+          </div>
         {% endfor %}
       </div>
     </div>

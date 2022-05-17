@@ -5,14 +5,14 @@
 {% block titulo %} Novo Aminalzinho {% endblock %}
 
 {% block content %}
-<form class="row g-3" method="POST" action="{{ url_for('register_aminal') }}" enctype = "multipart/form-data">
+<form class="row g-3 needs-validation" method="POST" action="{{ url_for('register_aminal') }}" enctype = "multipart/form-data" novalidate>
     <div class="col-md-6">
       <label for="amnNomeCompleto" class="form-label">Nome do Aminalzinho</label>
       <input type="text" class="form-control" id="amnNomeCompleto" name="amnNomeCompleto" value="{{ request.form['amnNomeCompleto'] }}">
     </div>
     <div class="col-md-6">
         <label for="amnFoto" class="form-label">Foto</label>
-        <input class="form-control" type="file" id="amnFoto" name="file" value="{{ request.form['file'] }}">
+        <input class="form-control" type="file" id="amnFoto" name="file" value="{{ request.form['file'] }}" required>
     </div>
     <div class="col-md-6">
       <label for="amnEspecie" class="form-label">Especie</label>
@@ -32,7 +32,7 @@
     </div>
     <div class="col-md-6">
         <label for="amnIdade" class="form-label">Idade</label>
-        <input type="number" class="form-control" id="amnIdade" name="amnIdade" value="{{ request.form['amnIdade'] }}">
+        <input type="number" class="form-control" id="amnIdade" name="amnIdade" value="{{ request.form['amnIdade'] }}" required>
       </div>
       <div class="col-md-6">
         <label for="amnPorte" class="form-label">Porte</label>
