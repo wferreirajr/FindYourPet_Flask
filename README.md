@@ -1,6 +1,6 @@
 # FindYourPet
 
-## [SENAC] - Projeto Integrador - 
+## [SENAC] - Projeto Integrador -  DESENVOLVIMENTO DE SISTEMAS ORIENTADO A DISPOSITIVOS MÓVEIS E BASEADOS NA WEB
 
 A segunda entrega do PI será mais desafiadora e vocês deverão utilizar os conhecimentos adquiridos em disciplinas de desenvolvimento web.
 
@@ -27,7 +27,7 @@ Here are the technologies used in this project.
 * Azure (Web App)
 
 
-## Pré-reqisitos
+## Pré-requisitos
 * Instalação Python 3.10;
     - Ubuntu 20.04
         > sudo apt install python3.10
