@@ -65,7 +65,7 @@ As tecnologias utilizadas no projeto são:
 * Agora vamos instalar todos os pré-requisitos que precisamos para a aplicação no nosso ambiente virtual, o comando que faz esta magia é:
     > pip install -r requirements.txt
 * Agora é somente executar a aplicação com o comando abaixo:
-    > flask run
+    * > flask run
 * Agora podemos abrir o navegador e digitar o endereço http://127.0.0.1:5000/ para acesso a página principal da aplicação.
 ## Como Utilizar
 
