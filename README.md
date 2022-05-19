@@ -11,7 +11,7 @@ A segunda entrega do PI será mais desafiadora e vocês deverão utilizar os con
 
 ## Tecnologias 
 
-Here are the technologies used in this project.
+As tecnologias utilizadas no projeto são:
 
 * Python 3.10 (Linguagem de Programação)
 * Flask 2.1.2 (Framework)
@@ -32,7 +32,7 @@ Here are the technologies used in this project.
     - Ubuntu 20.04
         > sudo apt install python3.10
     - Windows 10
-        Download (https://www.python.org/ftp/python/3.10.4/python-3.10.4-amd64.exe)  e instale
+        - Download (https://www.python.org/ftp/python/3.10.4/python-3.10.4-amd64.exe)  e instale
 * Instalação pip
     - Ubuntu 20.04
         > sudo apt install python3-pip
@@ -41,7 +41,7 @@ Here are the technologies used in this project.
         > sudo apt install python3-venv
 * Instalação git
     - Windows 10
-        Download (https://github.com/git-for-windows/git/releases/download/v2.36.1.windows.1/Git-2.36.1-64-bit.exe) e instale
+        - Download (https://github.com/git-for-windows/git/releases/download/v2.36.1.windows.1/Git-2.36.1-64-bit.exe) e instale
 
 
 ## Iniciando a Aplicação
@@ -88,8 +88,8 @@ Here are the technologies used in this project.
 
 ## Links
 
-  - Página principal (http://127.0.0.1:5000)
-  - Página administrativa (http://127.0.0.1:5000/admin)
+    * Página principal (http://127.0.0.1:5000)
+    * Página administrativa (http://127.0.0.1:5000/admin)
 
 
 ## Versões
@@ -110,5 +110,6 @@ Here are the technologies used in this project.
 * **Wilson Ferreira Junior** ID: 1142204645
 
 Por favor, siga o github e junte-se a nós!
+
 Obrigado por me visitar e boa codificação!
 
