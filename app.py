@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-from crypt import methods
+# from crypt import methods
 from flask import Flask, render_template, request, url_for, flash, redirect
 from importlib_metadata import files
 from werkzeug.utils import secure_filename

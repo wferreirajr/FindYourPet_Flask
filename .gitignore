@@ -114,6 +114,7 @@ bin/
 include/
 share/
 lib64/
+Scripts/
 pyvenv.cfg
 
 # Spyder project settings
