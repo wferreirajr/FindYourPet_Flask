@@ -44,44 +44,71 @@ Here are the technologies used in this project.
         Download (https://github.com/git-for-windows/git/releases/download/v2.36.1.windows.1/Git-2.36.1-64-bit.exe) e instale
 
 
-## Getting started
+## Iniciando a Aplicação
 
-* To install gems:
->    $ bundle install
-* To create the bank and do as migrations:
->    $ rake db:create db:migrate db:seed
-* To run the project:
->    $ rails s
+* Para abaixar o repositório execute o comando abaixo.
+    > git clone https://github.com/wferreirajr/FindYourPet_Flask.git
+* Após baixar o repositório entre no diretório que foi criado, para isso execute o comando abaixo.
+    > cd FindYourPet_Flask
+* Agora precisamos instalar o nosso ambiente virtual para isolar este app, o comando abaixo nos ajuda com isso.
+    > python3 -m venv .
+* Para ver toda a estrutura podemos digital o comando
+    - Ubuntu
+        > ls -last
+    - Windows
+        > dir
+* Para a ativação do nosso ambiente virtual devemos executar o comando abaixo.
+    - Ubuntu
+        > source ./bin/activate
+    - Windows 
+        > Scripts\activate.bat
+* Agora vamos instalar todos os pré-requisitos que precisamos para a aplicação no nosso ambiente virtual, o comando que faz esta magia é:
+    > pip install -r requirements.txt
+* Agora é somente executar a aplicação com o comando abaixo:
+    > flask run
+* Agora podemos abrir o navegador e digitar o endereço http://127.0.0.1:5000/ para acesso a página principal da aplicação.
+## Como Utilizar
 
-## How to use
+* 1. Primeiro vamos fazer o cadastro de um animalzinho para doação, para fazermos este cadastro devemos abrir o endereço http://127.0.0.1:5000/admin
+* 2. Para cadastrar o nosso animalzinho clique em Registro e em seguida em Cadastrar, agora preencha todos os campos inclusive a foto.
+* 3. Após o cadastro podemos voltar na página principal no endereço http://127.0.0.1:5000/ e podemos clicar no link dos gatos ou cachorros, dependendo do cadastro que foi feito, e podemos ver que o nosso novo animalzinho já aparece na página principal.
 
-Here will be the images and descriptions. Principal content.
 
+## Funcionalidades
 
-## Features
+* Página Administração
+    - Cadastro de usuários
+    - Cadastro de aminais
 
-  - Here will be the features.
+* Página Principal
+    - Registro de usuários
+    - Lista dos cachorros para doação
+    - Lista dos gatos para doação
 
 
 ## Links
 
-  - Link of deployed application: (if has been deployed)
-  - Repository: https://link_of_repository
-    - In case of sensitive bugs like security vulnerabilities, please contact
-      YOUR EMAIL directly instead of using issue tracker. We value your effort
-      to improve the security and privacy of this project!
+  - Página principal (http://127.0.0.1:5000)
+  - Página administrativa (http://127.0.0.1:5000/admin)
 
 
-## Versioning
+## Versões
 
-1.0.0.0
-
-
-## Authors
-
-* **YOUR NAME**: @YOUR_GITHUB_NICKNAME (https://github.com/YOUR_GITHUB_NICKNAME)
+1.0.0.0 (beta)
 
 
-Please follow github and join us!
-Thanks to visiting me and good coding!
+## Autores
+
+* **Alex Ferreira Nunes** ID: 1142194784
+* **Eduardo Felipe da Silva Kreve** ID: 1142515898
+* **Erivaldo Herculano dos Santos** ID: 1140037707
+* **Fabio Amorim de Lima** ID: 1140753327
+* **Gabriel Guimarães** ID: 1142200182
+* **Giordano Mendes Bueno** ID: 1142202174
+* **Luana Fernanda Deoclecio** ID: 1141126529
+* **Matheus Lima Barbosa** ID: 1142195493
+* **Wilson Ferreira Junior** ID: 1142204645
+
+Por favor, siga o github e junte-se a nós!
+Obrigado por me visitar e boa codificação!
 
