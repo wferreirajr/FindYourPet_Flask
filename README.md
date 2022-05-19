@@ -30,18 +30,18 @@ Here are the technologies used in this project.
 ## Pré-reqisitos
 * Instalação Python 3.10;
     - Ubuntu 20.04
-    > sudo apt install python3.10
+        > sudo apt install python3.10
     - Windows 10
-    Download (https://www.python.org/ftp/python/3.10.4/python-3.10.4-amd64.exe)  e instale
+        Download (https://www.python.org/ftp/python/3.10.4/python-3.10.4-amd64.exe)  e instale
 * Instalação pip
     - Ubuntu 20.04
-    > sudo apt install python3-pip
+        > sudo apt install python3-pip
 * Instalação python3-venv
     - Ubuntu 20.04
-    > sudo apt install python3-venv
+        > sudo apt install python3-venv
 * Instalação git
     - Windows 10
-    Download (https://github.com/git-for-windows/git/releases/download/v2.36.1.windows.1/Git-2.36.1-64-bit.exe) e instale
+        Download (https://github.com/git-for-windows/git/releases/download/v2.36.1.windows.1/Git-2.36.1-64-bit.exe) e instale
 
 
 ## Getting started
