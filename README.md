@@ -51,16 +51,19 @@ As tecnologias utilizadas no projeto são:
 * Após baixar o repositório entre no diretório que foi criado, para isso execute o comando abaixo.
     > cd FindYourPet_Flask
 * Agora precisamos instalar o nosso ambiente virtual para isolar este app, o comando abaixo nos ajuda com isso.
-    > python3 -m venv .
+    - Ubuntu (BASH)
+        > python3 -m venv .
+    - Windows (CMD)
+        > python -m venv .
 * Para ver toda a estrutura podemos digital o comando
-    - Ubuntu
+    - Ubuntu (BASH)
         > ls -last
-    - Windows
+    - Windows (CMD)
         > dir
 * Para a ativação do nosso ambiente virtual devemos executar o comando abaixo.
-    - Ubuntu
+    - Ubuntu (BASH)
         > source ./bin/activate
-    - Windows 
+    - Windows (CMD)
         > Scripts\activate.bat
 * Agora vamos instalar todos os pré-requisitos que precisamos para a aplicação no nosso ambiente virtual, o comando que faz esta magia é:
     > pip install -r requirements.txt
